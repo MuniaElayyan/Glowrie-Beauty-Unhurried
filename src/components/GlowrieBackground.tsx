@@ -6,7 +6,7 @@ const strips = Array.from({ length: 9 }, (_, i) => `/imgs/hero-bg/strip-${i + 1}
  */
 export function GlowrieBackground() {
     return (
-        <div className="absolute inset-0 overflow-hidden bg-plum-900">
+        <div className="absolute inset-0 overflow-hidden bg-plum-900 dark:bg-wine-950">
             <div className="flex h-full w-full">
                 {strips.map((src, i) => (
                     <div key={i} className="relative h-full flex-1 overflow-hidden">
