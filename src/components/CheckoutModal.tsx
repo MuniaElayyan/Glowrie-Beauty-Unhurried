@@ -2,6 +2,7 @@ import { useState, type FormEvent } from "react"
 import { formatCurrency } from "../utilities/formatCurrency"
 import { useShoppingCart } from "../context/ShoppingCartContext"
 import storeItems from "../data/items.json"
+import { sendOrderEmail } from "../services/sendOrderEmail"
 
 type CheckoutModalProps = {
     isOpen: boolean
@@ -10,25 +11,37 @@ type CheckoutModalProps = {
 
 export function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
     const { cartItems, clearCart } = useShoppingCart()
+
     const [step, setStep] = useState<"form" | "success">("form")
     const [name, setName] = useState("")
     const [phone, setPhone] = useState("")
     const [city, setCity] = useState("")
     const [address, setAddress] = useState("")
     const [notes, setNotes] = useState("")
+    const [isSubmitting, setIsSubmitting] = useState(false)
+    const [error, setError] = useState("")
 
     const detailedItems = cartItems
         .map(cartItem => {
             const item = storeItems.find(i => i.id === cartItem.id)
-            return item ? { ...item, quantity: cartItem.quantity } : null
+
+            return item
+                ? {
+                      ...item,
+                      quantity: cartItem.quantity,
+                  }
+                : null
         })
         .filter((i): i is NonNullable<typeof i> => i != null)
 
-    const total = detailedItems.reduce((sum, item) => sum + item.price * item.quantity, 0)
+    const total = detailedItems.reduce(
+        (sum, item) => sum + item.price * item.quantity,
+        0
+    )
 
     function handleClose() {
         onClose()
-        // Reset for next time, after the close transition
+
         setTimeout(() => {
             setStep("form")
             setName("")
@@ -36,27 +49,76 @@ export function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
             setCity("")
             setAddress("")
             setNotes("")
+            setError("")
+            setIsSubmitting(false)
         }, 300)
     }
 
-    function handleSubmit(e: FormEvent) {
+    async function handleSubmit(e: FormEvent) {
         e.preventDefault()
-        if (!name.trim() || !phone.trim() || !city.trim() || !address.trim()) return
-        setStep("success")
-        clearCart()
+
+        if (
+            !name.trim() ||
+            !phone.trim() ||
+            !city.trim() ||
+            !address.trim()
+        ) {
+            return
+        }
+
+        if (detailedItems.length === 0) {
+            setError("لا يوجد منتجات في السلة.")
+            return
+        }
+
+        setIsSubmitting(true)
+        setError("")
+
+        try {
+            await sendOrderEmail({
+                name: name.trim(),
+                phone: phone.trim(),
+                city: city.trim(),
+                address: address.trim(),
+                notes: notes.trim(),
+                items: detailedItems.map(item => ({
+                    name: item.name,
+                    quantity: item.quantity,
+                    price: item.price,
+                })),
+                total,
+            })
+
+            setStep("success")
+            clearCart()
+        } catch (error) {
+            console.error("Order email error:", error)
+
+            setError(
+                "حدث خطأ أثناء تأكيد الطلب. يرجى المحاولة مرة أخرى."
+            )
+        } finally {
+            setIsSubmitting(false)
+        }
     }
 
     if (!isOpen) return null
 
     return (
         <div className="fixed inset-0 z-[60] flex items-center justify-center p-4">
-            <div className="absolute inset-0 bg-plum-900/50 dark:bg-wine-950/70 backdrop-blur-sm" onClick={handleClose} />
+            <div
+                className="absolute inset-0 bg-plum-900/50 dark:bg-wine-950/70 backdrop-blur-sm"
+                onClick={handleClose}
+            />
 
             <div className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto bg-blush-50 dark:bg-wine-900 rounded-3xl shadow-2xl animate-popIn ring-1 ring-blush-200/70 dark:ring-wine-700/70">
                 {step === "form" ? (
                     <>
                         <div className="sticky top-0 bg-blush-50/95 dark:bg-wine-900/95 backdrop-blur-sm flex items-center justify-between px-6 py-5 border-b border-blush-200 dark:border-wine-700 z-10">
-                            <h3 className="font-display italic text-2xl text-plum-900 dark:text-sand-100">Complete your order</h3>
+                            <h3 className="font-display italic text-2xl text-plum-900 dark:text-sand-100">
+                                Complete your order
+                            </h3>
+
                             <button
                                 onClick={handleClose}
                                 className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-blush-100 text-plum-600 text-xl leading-none transition-colors dark:text-sand-300 dark:hover:bg-wine-800 dark:hover:text-sand-100"
@@ -71,24 +133,46 @@ export function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
                                 <p className="text-xs tracking-[0.15em] uppercase text-blush-600 dark:text-sand-300 font-medium mb-3">
                                     Order summary
                                 </p>
+
                                 <div className="rounded-2xl bg-white dark:bg-sand-100 ring-1 ring-blush-200/70 dark:ring-wine-700/40 p-4 flex flex-col gap-3 mb-2">
                                     {detailedItems.map(item => (
-                                        <div key={item.id} className="flex items-center gap-3">
+                                        <div
+                                            key={item.id}
+                                            className="flex items-center gap-3"
+                                        >
                                             <div className="w-12 h-12 shrink-0 rounded-lg overflow-hidden bg-[#FDEFE9] dark:bg-sand-200">
-                                                <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+                                                <img
+                                                    src={item.image}
+                                                    alt={item.name}
+                                                    className="w-full h-full object-cover"
+                                                />
                                             </div>
+
                                             <div className="mr-auto text-sm text-plum-900">
-                                                {item.name} <span className="text-plum-400">×{item.quantity}</span>
+                                                {item.name}{" "}
+                                                <span className="text-plum-400">
+                                                    ×{item.quantity}
+                                                </span>
                                             </div>
+
                                             <div className="text-sm text-plum-900 font-medium">
-                                                {formatCurrency(item.price * item.quantity)}
+                                                {formatCurrency(
+                                                    item.price *
+                                                        item.quantity
+                                                )}
                                             </div>
                                         </div>
                                     ))}
                                 </div>
+
                                 <div className="flex justify-between items-baseline px-1">
-                                    <span className="text-sm text-plum-400 dark:text-sand-400">Total</span>
-                                    <span className="font-display text-xl text-plum-900 dark:text-sand-100">{formatCurrency(total)}</span>
+                                    <span className="text-sm text-plum-400 dark:text-sand-400">
+                                        Total
+                                    </span>
+
+                                    <span className="font-display text-xl text-plum-900 dark:text-sand-100">
+                                        {formatCurrency(total)}
+                                    </span>
                                 </div>
                             </div>
 
@@ -96,6 +180,7 @@ export function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
                                 <label className="block text-xs tracking-[0.15em] uppercase text-blush-600 dark:text-sand-300 font-medium mb-2">
                                     Full name
                                 </label>
+
                                 <input
                                     required
                                     value={name}
@@ -109,6 +194,7 @@ export function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
                                 <label className="block text-xs tracking-[0.15em] uppercase text-blush-600 dark:text-sand-300 font-medium mb-2">
                                     Phone number
                                 </label>
+
                                 <input
                                     required
                                     type="tel"
@@ -123,6 +209,7 @@ export function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
                                 <label className="block text-xs tracking-[0.15em] uppercase text-blush-600 dark:text-sand-300 font-medium mb-2">
                                     City / Area
                                 </label>
+
                                 <input
                                     required
                                     value={city}
@@ -136,6 +223,7 @@ export function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
                                 <label className="block text-xs tracking-[0.15em] uppercase text-blush-600 dark:text-sand-300 font-medium mb-2">
                                     Home address / nearby landmark
                                 </label>
+
                                 <textarea
                                     required
                                     value={address}
@@ -148,8 +236,12 @@ export function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
 
                             <div className="mb-6">
                                 <label className="block text-xs tracking-[0.15em] uppercase text-blush-600 dark:text-sand-300 font-medium mb-2">
-                                    Delivery notes <span className="normal-case text-plum-400">(optional)</span>
+                                    Delivery notes{" "}
+                                    <span className="normal-case text-plum-400">
+                                        (optional)
+                                    </span>
                                 </label>
+
                                 <textarea
                                     value={notes}
                                     onChange={e => setNotes(e.target.value)}
@@ -161,36 +253,63 @@ export function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
 
                             <div className="flex items-center gap-3 mb-6 rounded-2xl bg-butter-100 ring-1 ring-butter-200 dark:bg-sand-200 dark:ring-sand-300 px-4 py-3">
                                 <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center shrink-0">
-                                    <svg viewBox="0 0 24 24" className="w-4 h-4 fill-blush-600">
+                                    <svg
+                                        viewBox="0 0 24 24"
+                                        className="w-4 h-4 fill-blush-600"
+                                    >
                                         <path d="M20 6H4c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 10H4v-6h16v6zm0-8H4V8h16v.01z" />
                                     </svg>
                                 </div>
+
                                 <div>
-                                    <p className="text-sm text-plum-900 font-medium">Cash on delivery</p>
-                                    <p className="text-xs text-plum-400">Pay in cash when your order arrives</p>
+                                    <p className="text-sm text-plum-900 font-medium">
+                                        Cash on delivery
+                                    </p>
+
+                                    <p className="text-xs text-plum-400">
+                                        Pay in cash when your order arrives
+                                    </p>
                                 </div>
                             </div>
 
+                            {error && (
+                                <div className="mb-5 rounded-xl bg-red-50 text-red-600 px-4 py-3 text-sm">
+                                    {error}
+                                </div>
+                            )}
+
                             <button
                                 type="submit"
-                                className="w-full py-3.5 rounded-full bg-plum-900 text-white text-sm font-medium tracking-wide hover:bg-blush-600 transition-colors duration-300 dark:bg-sand-200 dark:text-wine-900 dark:hover:bg-sand-100"
+                                disabled={isSubmitting}
+                                className="w-full py-3.5 rounded-full bg-plum-900 text-white text-sm font-medium tracking-wide hover:bg-blush-600 transition-colors duration-300 dark:bg-sand-200 dark:text-wine-900 dark:hover:bg-sand-100 disabled:opacity-60 disabled:cursor-not-allowed"
                             >
-                                Place order — {formatCurrency(total)}
+                                {isSubmitting
+                                    ? "Sending order..."
+                                    : `Place order — ${formatCurrency(total)}`}
                             </button>
                         </form>
                     </>
                 ) : (
                     <div className="px-8 py-14 text-center">
                         <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-blush-100 dark:bg-sand-200 flex items-center justify-center animate-popIn">
-                            <svg viewBox="0 0 24 24" className="w-7 h-7 fill-blush-600 dark:fill-wine-700">
+                            <svg
+                                viewBox="0 0 24 24"
+                                className="w-7 h-7 fill-blush-600 dark:fill-wine-700"
+                            >
                                 <path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z" />
                             </svg>
                         </div>
-                        <h3 className="font-display italic text-2xl text-plum-900 dark:text-sand-100 mb-3">Order placed!</h3>
+
+                        <h3 className="font-display italic text-2xl text-plum-900 dark:text-sand-100 mb-3">
+                            Order placed!
+                        </h3>
+
                         <p className="text-sm text-plum-400 dark:text-sand-400 max-w-xs mx-auto leading-relaxed mb-8">
-                            Thank you, {name.split(" ")[0] || "friend"}. We'll give you a quick call at {phone} to
-                            confirm before it heads your way — pay in cash when it arrives.
+                            Thank you, {name.split(" ")[0] || "friend"}. We'll
+                            give you a quick call at {phone} to confirm before
+                            it heads your way — pay in cash when it arrives.
                         </p>
+
                         <button
                             onClick={handleClose}
                             className="px-8 py-3 rounded-full bg-plum-900 text-white text-sm font-medium tracking-wide hover:bg-blush-600 transition-colors duration-300 dark:bg-sand-200 dark:text-wine-900 dark:hover:bg-sand-100"
@@ -203,3 +322,4 @@ export function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
         </div>
     )
 }
+
