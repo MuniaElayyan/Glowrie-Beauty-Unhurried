@@ -29,17 +29,17 @@ export function Home() {
             <section className="relative w-screen left-1/2 -translate-x-1/2 overflow-hidden min-h-[560px] sm:min-h-[680px] flex items-end">
                 <div className="absolute inset-0 overflow-hidden">
                     <GlowrieBackground />
-                    <div className="absolute inset-0 bg-gradient-to-t from-plum-900/85 via-plum-900/25 to-plum-900/10" />
-                    <div className="absolute inset-0 bg-gradient-to-r from-plum-900/30 via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-plum-900/85 via-plum-900/25 to-plum-900/10 dark:from-wine-950/90 dark:via-wine-950/35 dark:to-wine-950/10" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-plum-900/30 via-transparent to-transparent dark:from-wine-950/40" />
                 </div>
 
                 {HERO_BADGES.map(badge => (
                     <div
                         key={badge.label}
-                        className={`hidden sm:flex absolute ${badge.position} items-center gap-2 px-4 py-2 rounded-full bg-white/90 backdrop-blur-sm shadow-lg animate-floaty`}
+                        className={`hidden sm:flex absolute ${badge.position} items-center gap-2 px-4 py-2 rounded-full bg-white/90 dark:bg-sand-100/95 backdrop-blur-sm shadow-lg animate-floaty`}
                         style={{ animationDelay: badge.delay }}
                     >
-                        <span className="w-1.5 h-1.5 rounded-full bg-blush-500" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-blush-500 dark:bg-wine-600" />
                         <span className="text-xs font-medium text-plum-900 tracking-wide">{badge.label}</span>
                     </div>
                 ))}
@@ -66,7 +66,7 @@ export function Home() {
                             <div className="flex items-center gap-4">
                                 <Link
                                     to="/store"
-                                    className="px-7 py-3.5 rounded-full bg-white text-plum-900 text-sm font-medium tracking-wide hover:bg-blush-100 transition-colors duration-300 shadow-lg"
+                                    className="px-7 py-3.5 rounded-full bg-white text-plum-900 text-sm font-medium tracking-wide hover:bg-blush-100 dark:hover:bg-sand-200 transition-colors duration-300 shadow-lg"
                                 >
                                     Shop the edit
                                 </Link>
@@ -96,7 +96,7 @@ export function Home() {
                         <Link
                             key={cat.key}
                             to="/store"
-                            className="group relative rounded-2xl h-40 flex flex-col justify-end overflow-hidden ring-1 ring-blush-200/70 hover:ring-blush-400 transition-all duration-300 hover:-translate-y-1"
+                            className="group relative rounded-2xl h-40 flex flex-col justify-end overflow-hidden ring-1 ring-blush-200/70 hover:ring-blush-400 dark:ring-wine-700/70 dark:hover:ring-sand-400 transition-all duration-300 hover:-translate-y-1"
                             style={{ transitionDelay: `${i * 60}ms` }}
                         >
                             <img
@@ -121,20 +121,20 @@ export function Home() {
             {/* Life strip — real product texture in motion */}
             <section className="pb-16 -mx-5 px-5 overflow-hidden">
                 <Reveal>
-                    <p className="text-xs tracking-[0.2em] text-blush-600 font-medium mb-4 text-center">
+                    <p className="text-xs tracking-[0.2em] text-blush-600 dark:text-sand-300 font-medium mb-4 text-center">
                         a peek behind the products
                     </p>
                 </Reveal>
                 <div className="relative">
-                    <div className="absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-blush-50 to-transparent z-10" />
-                    <div className="absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-blush-50 to-transparent z-10" />
+                    <div className="absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-blush-50 dark:from-wine-950 to-transparent z-10" />
+                    <div className="absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-blush-50 dark:from-wine-950 to-transparent z-10" />
                     <div className="flex w-max animate-marquee hover:[animation-play-state:paused]">
                         {[...LIFE_STRIP, ...LIFE_STRIP].map((item, i) => (
                             <div
                                 key={i}
-                                className="w-40 h-52 sm:w-48 sm:h-60 mx-2.5 rounded-2xl overflow-hidden ring-1 ring-blush-200/70 shrink-0 shadow-sm"
+                                className="w-40 h-52 sm:w-48 sm:h-60 mx-2.5 rounded-2xl overflow-hidden ring-1 ring-blush-200/70 dark:ring-wine-700/60 shrink-0 shadow-sm"
                             >
-                                <img src={item.src} alt={item.alt} loading="lazy" className="w-full h-full object-contain bg-[#FDEFE9] p-3 transition-transform duration-500 hover:scale-105" />
+                                <img src={item.src} alt={item.alt} loading="lazy" className="w-full h-full object-contain bg-[#FDEFE9] dark:bg-sand-200 p-3 transition-transform duration-500 hover:scale-105" />
                             </div>
                         ))}
                     </div>
@@ -143,8 +143,8 @@ export function Home() {
 
             {/* Teaser */}
             <section className="pb-20">
-                <Reveal className="rounded-3xl overflow-hidden ring-1 ring-blush-200/70 relative">
-                    <div className="aspect-video relative overflow-hidden bg-plum-900">
+                <Reveal className="rounded-3xl overflow-hidden ring-1 ring-blush-200/70 dark:ring-wine-700/60 relative">
+                    <div className="aspect-video relative overflow-hidden bg-plum-900 dark:bg-wine-950">
                         <video
                             className="absolute inset-0 w-full h-full object-cover"
                             controls
@@ -156,7 +156,7 @@ export function Home() {
                             <source src="/video/beauty-teaser.mp4" type="video/mp4" />
                             Your browser does not support the video tag.
                         </video>
-                        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-plum-900/55 via-transparent to-transparent" />
+                        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-plum-900/55 dark:from-wine-950/65 via-transparent to-transparent" />
                         <p className="pointer-events-none absolute bottom-6 left-6 right-6 sm:left-8 sm:right-auto font-display italic text-xl sm:text-2xl text-white drop-shadow-md">
                             Watch the full collection in motion
                         </p>
@@ -167,8 +167,8 @@ export function Home() {
             {/* Featured products */}
             <section className="pb-20">
                 <Reveal className="flex items-end justify-between mb-6">
-                    <h2 className="font-display text-3xl text-plum-900">A few favorites</h2>
-                    <Link to="/store" className="text-sm text-blush-600 hover:text-blush-700 transition-colors">
+                    <h2 className="font-display text-3xl text-plum-900 dark:text-sand-100">A few favorites</h2>
+                    <Link to="/store" className="text-sm text-blush-600 hover:text-blush-700 dark:text-sand-300 dark:hover:text-sand-100 transition-colors">
                         View all →
                     </Link>
                 </Reveal>
@@ -177,9 +177,9 @@ export function Home() {
                         <Reveal key={item.id} delay={i * 80}>
                             <Link
                                 to="/store"
-                                className="group block rounded-2xl bg-white ring-1 ring-blush-200/70 overflow-hidden hover:-translate-y-1 hover:ring-blush-400 hover:shadow-[0_18px_38px_-18px_rgba(198,64,122,0.35)] transition-all duration-300"
+                                className="group block rounded-2xl bg-white dark:bg-sand-100 ring-1 ring-blush-200/70 dark:ring-wine-700/60 overflow-hidden hover:-translate-y-1 hover:ring-blush-400 dark:hover:ring-sand-400 hover:shadow-[0_18px_38px_-18px_rgba(198,64,122,0.35)] transition-all duration-300"
                             >
-                                <div className="h-40 flex items-center justify-center overflow-hidden bg-[#FDEFE9]">
+                                <div className="h-40 flex items-center justify-center overflow-hidden bg-[#FDEFE9] dark:bg-sand-200">
                                     <img
                                         src={item.image}
                                         alt={item.name}
