@@ -14,21 +14,21 @@ export function CartItem({ id, quantity }: CartItemProps) {
 
     return (
         <div className="flex items-center gap-3">
-            <div className="w-16 h-16 shrink-0 rounded-xl overflow-hidden bg-[#FDEFE9]">
+            <div className="w-16 h-16 shrink-0 rounded-xl overflow-hidden bg-[#FDEFE9] dark:bg-sand-200">
                 <img src={item.image} alt={item.name} className="w-full h-full object-contain p-1" />
             </div>
             <div className="mr-auto">
-                <div className="text-sm text-plum-900 font-medium">
+                <div className="text-sm text-plum-900 dark:text-sand-100 font-medium">
                     {item.name}{" "}
-                    {quantity > 1 && <span className="text-plum-400 text-xs">×{quantity}</span>}
+                    {quantity > 1 && <span className="text-plum-400 dark:text-sand-400 text-xs">×{quantity}</span>}
                 </div>
-                <div className="text-plum-400 text-xs">
+                <div className="text-plum-400 dark:text-sand-400 text-xs">
                     {formatCurrency(item.price)}
                 </div>
             </div>
-            <div className="text-sm text-plum-900 font-medium">{formatCurrency(item.price * quantity)}</div>
+            <div className="text-sm text-plum-900 dark:text-sand-100 font-medium">{formatCurrency(item.price * quantity)}</div>
             <button
-                className="w-7 h-7 flex items-center justify-center rounded-full text-plum-400 hover:text-blush-600 hover:bg-blush-100 text-sm transition-colors"
+                className="w-7 h-7 flex items-center justify-center rounded-full text-plum-400 hover:text-blush-600 hover:bg-blush-100 text-sm transition-colors dark:text-sand-400 dark:hover:text-sand-100 dark:hover:bg-wine-800"
                 onClick={() => removeFromCart(item.id)}
                 aria-label="Remove item"
             >
