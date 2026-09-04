@@ -1,0 +1,392 @@
+[
+  {
+    "id": 1,
+    "name": "Ultraterra Hydrating Primer",
+    "category": "face",
+    "price": 16,
+    "tagline": "Melts in for an all-day dewy base",
+    "image": "/imgs/products/face-ultraterra-primer.jpg",
+    "description": "برايمر مرطب يمنح البشرة قاعدة ناعمة ومضيئة مع ترطيب يدوم، مناسب قبل المكياج للحصول على مظهر ندي.",
+    "usage": "ضعي كمية صغيرة على الوجه بعد العناية بالبشرة، ثم ادمجيها قبل كريم الأساس."
+  },
+  {
+    "id": 2,
+    "name": "Melt Touch Hydrating Primer",
+    "category": "face",
+    "price": 15,
+    "tagline": "A quick-melt formula for thirsty skin",
+    "image": "/imgs/products/face-hydrating-primer.jpg",
+    "description": "برايمر خفيف يذوب بسرعة على البشرة الجافة ليمنحها إحساسًا بالراحة وقاعدة مرنة للمكياج.",
+    "usage": "وزعي طبقة رقيقة على المناطق الجافة واتركيها دقيقة قبل وضع المكياج."
+  },
+  {
+    "id": 3,
+    "name": "Rose Glow Drops",
+    "category": "face",
+    "price": 18,
+    "tagline": "A faceted bottle of lit-from-within glow",
+    "image": "/imgs/products/face-glow-drops.jpg",
+    "description": "قطرات إشراقة بعبوة أنيقة تضيف توهجًا ناعمًا وطبيعيًا للبشرة دون مظهر ثقيل.",
+    "usage": "اخلطي قطرة أو اثنتين مع كريم الأساس أو ضعيها مباشرة على أعلى نقاط الوجه."
+  },
+  {
+    "id": 4,
+    "name": "Second Skin Concealer",
+    "category": "face",
+    "price": 12.5,
+    "tagline": "Soft coverage that never looks cakey",
+    "image": "/imgs/products/face-concealer.jpg",
+    "description": "كونسيلر بتغطية ناعمة ومتدرجة يساعد على توحيد مظهر البشرة مع لمسة طبيعية غير متكتلة.",
+    "usage": "ضعي نقاطًا صغيرة تحت العينين وعلى مواضع التصبغ ثم ربتي عليها بإسفنجة أو فرشاة."
+  },
+  {
+    "id": 5,
+    "name": "Good Grip Blur Primer",
+    "category": "face",
+    "price": 17,
+    "tagline": "Blurs pores so makeup grips and stays",
+    "image": "/imgs/products/face-blur-primer.jpg",
+    "description": "برايمر تمويه يساعد على تنعيم مظهر المسام وتحضير البشرة لثبات أفضل للمكياج.",
+    "usage": "ضعيه على مناطق المسام خصوصًا حول الأنف والخدين، ثم ربتي بلطف قبل كريم الأساس."
+  },
+  {
+    "id": 6,
+    "name": "Aura Grip Pore-Blur Serum",
+    "category": "face",
+    "price": 21,
+    "tagline": "Bio-infused serum for a soft-focus finish",
+    "image": "/imgs/products/face-aura-serum.jpg",
+    "description": "سيروم بلمسة تنعيم بصرية يساعد على منح البشرة مظهرًا أكثر صفاءً ونعومة قبل المكياج.",
+    "usage": "استخدمي كمية صغيرة على البشرة النظيفة واتركيها تمتص قبل وضع بقية المنتجات."
+  },
+  {
+    "id": 7,
+    "name": "Sculpt & Illuminate Stick",
+    "category": "face",
+    "price": 19,
+    "tagline": "Contour and glow in one twist-up stick",
+    "image": "/imgs/products/face-sculpt-stick.jpg",
+    "description": "ستيك عملي يجمع بين تحديد ملامح الوجه وإضافة الإضاءة في منتج واحد سهل الاستخدام.",
+    "usage": "مرري درجة التحديد على مناطق الظل، ثم درجة الإضاءة على النقاط المرتفعة وادمجي جيدًا."
+  },
+  {
+    "id": 8,
+    "name": "Wonder Wings Mascara Duo",
+    "category": "eyes",
+    "price": 20,
+    "tagline": "Two wands, one jeweled tube, endless lift",
+    "image": "/imgs/products/eyes-mascara-duo.jpg",
+    "description": "ثنائي ماسكارا بفرشاتين يمنح الرموش مظهرًا أكثر رفعًا وكثافة مع تصميم أنيق.",
+    "usage": "استخدمي الفرشاة المناسبة حسب اللوك ومرريها من الجذور إلى الأطراف مع طبقات خفيفة."
+  },
+  {
+    "id": 9,
+    "name": "Lash & Line Duo Set",
+    "category": "eyes",
+    "price": 18,
+    "tagline": "Volumizing mascara paired with a precision liner",
+    "image": "/imgs/products/eyes-liner-mascara.jpg",
+    "description": "مجموعة تجمع ماسكارا لزيادة كثافة الرموش مع آيلاينر دقيق لرسم خط واضح.",
+    "usage": "حددي خط الرموش أولًا ثم مرري الماسكارا من الجذور إلى الأطراف."
+  },
+  {
+    "id": 10,
+    "name": "Aura Shimmer 9-Pan Palette",
+    "category": "eyes",
+    "price": 19,
+    "tagline": "Nine shimmering shades from soft to sultry",
+    "image": "/imgs/products/eyes-shimmer-palette.jpg",
+    "description": "لوحة ظلال من تسع درجات لامعة ومتنوعة، مناسبة للوك يومي ناعم أو إطلالة مسائية.",
+    "usage": "اختاري لونًا أساسيًا وادمجيه على الجفن، ثم أضيفي الدرجات اللامعة على منتصف الجفن أو الزاوية الداخلية."
+  },
+  {
+    "id": 11,
+    "name": "Brow Trio Kit",
+    "category": "eyes",
+    "price": 14,
+    "tagline": "Three tones and a spoolie for brows that behave",
+    "image": "/imgs/products/eyes-brow-kit.jpg",
+    "description": "طقم حواجب بثلاث درجات مع فرشاة سبولي لتعبئة الحواجب وتحديدها بمظهر متوازن.",
+    "usage": "اختاري الدرجة الأقرب للون الحاجب، املئي الفراغات بخفة ثم مشطي بالشكل المرغوب."
+  },
+  {
+    "id": 12,
+    "name": "Rosy Kiss Lip Oil",
+    "category": "lips",
+    "price": 13,
+    "tagline": "A glassy tint with a soft rosy flush",
+    "image": "/imgs/products/lips-glow-oil.jpg",
+    "description": "زيت شفاه شفاف بلمسة وردية يمنح الشفاه لمعانًا زجاجيًا ومظهرًا منعشًا.",
+    "usage": "مرريه مباشرة على الشفاه وحده أو فوق لون الشفاه لإضافة اللمعان."
+  },
+  {
+    "id": 13,
+    "name": "So Lippy Lip Liner Set — Nudes",
+    "category": "lips",
+    "price": 15,
+    "tagline": "Three nude liners to make any lip last longer",
+    "image": "/imgs/products/lips-liner-set.jpg",
+    "description": "مجموعة من ثلاثة محددات شفاه بدرجات نود تساعد على رسم الحواف وإطالة ثبات لون الشفاه.",
+    "usage": "حددي محيط الشفاه ثم املئي الأطراف قليلًا قبل وضع الروج أو الغلوس."
+  },
+  {
+    "id": 14,
+    "name": "Ombre Dream Lipstick",
+    "category": "lips",
+    "price": 14.5,
+    "tagline": "A gradient bullet that glides on blurred and rosy",
+    "image": "/imgs/products/lips-ombre-lipstick.jpg",
+    "description": "روج بتدرج لوني ناعم يمنح الشفاه مظهرًا ورديًا مطفأ الحواف وسهل الدمج.",
+    "usage": "ضعي اللون في منتصف الشفاه ثم ادمجيه للخارج للحصول على تأثير متدرج."
+  },
+  {
+    "id": 15,
+    "name": "Holo Glow Lipstick",
+    "category": "lips",
+    "price": 14.5,
+    "tagline": "Iridescent case, a shimmering rose-gold finish",
+    "image": "/imgs/products/lips-holo-lipstick.jpg",
+    "description": "روج بعبوة لامعة ولمسة وردية ذهبية متلألئة لإطلالة لافتة وخفيفة في الوقت نفسه.",
+    "usage": "مرريه مباشرة على الشفاه ويمكن وضع طبقة ثانية لزيادة وضوح اللمعة."
+  },
+  {
+    "id": 16,
+    "name": "Gloss Angeles Lip Gloss",
+    "category": "lips",
+    "price": 11,
+    "tagline": "Sheer coral shine with a plumped-up finish",
+    "image": "/imgs/products/lips-gloss.jpg",
+    "description": "غلوس بلمعة شفافة مائلة للمرجاني يمنح الشفاه مظهرًا ممتلئًا ولامعًا.",
+    "usage": "ضعيه وحده للحصول على لون خفيف أو فوق الروج لإضافة اللمعان."
+  },
+  {
+    "id": 17,
+    "name": "Soft Cloud Powder Puff",
+    "category": "tools",
+    "price": 7,
+    "tagline": "A velvety puff for the softest bake and set",
+    "image": "/imgs/products/tools-powder-puff.jpg",
+    "description": "بودرة ناعمة مخملية مصممة لتثبيت المكياج وتوزيع البودرة بلطف دون تركيزها في بقعة واحدة.",
+    "usage": "اضغطي بها البودرة على المناطق المراد تثبيتها ثم ربتي بخفة بدل السحب."
+  },
+  {
+    "id": 18,
+    "name": "Sculpt Kabuki Brush",
+    "category": "tools",
+    "price": 16,
+    "tagline": "A faceted handle and a flawless buff finish",
+    "image": "/imgs/products/tools-kabuki-brush.jpg",
+    "description": "فرشاة كثيفة بقبضة مميزة تساعد على توزيع ودمج منتجات الوجه للحصول على تغطية متجانسة.",
+    "usage": "ضعي المنتج على الفرشاة وادمجي بحركات دائرية أو تنقيطية حتى يصبح السطح متجانسًا."
+  },
+  {
+    "id": 19,
+    "name": "Blend Dream Makeup Sponge",
+    "category": "tools",
+    "price": 8,
+    "tagline": "Bounces product on without soaking it up",
+    "image": "/imgs/products/tools-sponge.jpg",
+    "description": "إسفنجة مكياج مرنة تساعد على دمج المنتجات بسلاسة مع امتصاص أقل للمنتج.",
+    "usage": "بللي الإسفنجة واعصري الماء جيدًا، ثم ربتي بالمنتج على البشرة للحصول على دمج متساوٍ."
+  },
+  {
+    "id": 20,
+    "name": "Pearl Glow Brush Set",
+    "category": "tools",
+    "price": 32,
+    "tagline": "Six pearlescent brushes for face and eyes",
+    "image": "/imgs/products/tools-brush-set.jpg",
+    "description": "مجموعة من ست فرش بلمسة لؤلؤية لتطبيق ودمج منتجات الوجه والعينين في روتين متكامل.",
+    "usage": "اختاري الفرشاة حسب المنتج، ثم استخدمي حركات قصيرة وناعمة للدمج والتفاصيل."
+  },
+  {
+    "id": 21,
+    "name": "Rose Sculpt Face Palette",
+    "category": "face",
+    "price": 22,
+    "tagline": "A rosy face palette for soft sculpting and fresh color",
+    "image": "/imgs/products/rose-sculpt-face-palette.jpg",
+    "description": "A rosy face palette for soft sculpting and fresh color.",
+    "usage": "استخدميه حسب حاجتك وادمجيه بلطف للحصول على أفضل نتيجة."
+  },
+  {
+    "id": 22,
+    "name": "Botanical Dew Serum",
+    "category": "face",
+    "price": 20,
+    "tagline": "A fresh botanical serum for a soft, luminous-looking finish",
+    "image": "/imgs/products/botanical-dew-serum.jpg",
+    "description": "A fresh botanical serum for a soft, luminous-looking finish.",
+    "usage": "استخدميه حسب حاجتك وادمجيه بلطف للحصول على أفضل نتيجة."
+  },
+  {
+    "id": 23,
+    "name": "Lash & Brow Precision Duo",
+    "category": "eyes",
+    "price": 17,
+    "tagline": "A sleek duo for defined lashes and polished brows",
+    "image": "/imgs/products/lash-brow-precision-duo.jpg",
+    "description": "A sleek duo for defined lashes and polished brows.",
+    "usage": "استخدميه حسب حاجتك وادمجيه بلطف للحصول على أفضل نتيجة."
+  },
+  {
+    "id": 24,
+    "name": "Golden Hour Eye Palette",
+    "category": "eyes",
+    "price": 24,
+    "tagline": "Warm golden shades for easy everyday eye looks",
+    "image": "/imgs/products/golden-hour-eye-palette.jpg",
+    "description": "Warm golden shades for easy everyday eye looks.",
+    "usage": "استخدميه حسب حاجتك وادمجيه بلطف للحصول على أفضل نتيجة."
+  },
+  {
+    "id": 25,
+    "name": "Rosewood Velvet Lipstick",
+    "category": "lips",
+    "price": 15,
+    "tagline": "A warm rosy nude with a smooth satin finish",
+    "image": "/imgs/products/rosewood-velvet-lipstick.jpg",
+    "description": "A warm rosy nude with a smooth satin finish.",
+    "usage": "استخدميه حسب حاجتك وادمجيه بلطف للحصول على أفضل نتيجة."
+  },
+  {
+    "id": 26,
+    "name": "Petal Nude Lipstick",
+    "category": "lips",
+    "price": 15,
+    "tagline": "A soft petal nude for effortless everyday color",
+    "image": "/imgs/products/petal-nude-lipstick.jpg",
+    "description": "A soft petal nude for effortless everyday color.",
+    "usage": "استخدميه حسب حاجتك وادمجيه بلطف للحصول على أفضل نتيجة."
+  },
+  {
+    "id": 27,
+    "name": "Blush Glass Lip Duo",
+    "category": "lips",
+    "price": 18,
+    "tagline": "Glossy pink lip color with a fresh glass-like shine",
+    "image": "/imgs/products/blush-glass-lip-duo.jpg",
+    "description": "Glossy pink lip color with a fresh glass-like shine.",
+    "usage": "استخدميه حسب حاجتك وادمجيه بلطف للحصول على أفضل نتيجة."
+  },
+  {
+    "id": 28,
+    "name": "Rose Garden Lipstick",
+    "category": "lips",
+    "price": 16,
+    "tagline": "A romantic rose shade styled for a polished pout",
+    "image": "/imgs/products/rose-garden-lipstick.jpg",
+    "description": "A romantic rose shade styled for a polished pout.",
+    "usage": "استخدميه حسب حاجتك وادمجيه بلطف للحصول على أفضل نتيجة."
+  },
+  {
+    "id": 29,
+    "name": "Pink Veil Lip Collection",
+    "category": "lips",
+    "price": 21,
+    "tagline": "A playful collection of pink lip shades and glosses",
+    "image": "/imgs/products/pink-veil-lip-collection.jpg",
+    "description": "A playful collection of pink lip shades and glosses.",
+    "usage": "استخدميه حسب حاجتك وادمجيه بلطف للحصول على أفضل نتيجة."
+  },
+  {
+    "id": 30,
+    "name": "Pro Artist Brush Roll",
+    "category": "tools",
+    "price": 28,
+    "tagline": "A complete brush roll for easy everyday makeup",
+    "image": "/imgs/products/pro-artist-brush-roll.png",
+    "description": "A complete brush roll for easy everyday makeup.",
+    "usage": "استخدميه حسب حاجتك وادمجيه بلطف للحصول على أفضل نتيجة."
+  },
+  {
+    "id": 31,
+    "name": "Cloud Blender Puff Trio",
+    "category": "tools",
+    "price": 12,
+    "tagline": "Soft beauty puffs for smooth, even application",
+    "image": "/imgs/products/cloud-blender-puff-trio.png",
+    "description": "Soft beauty puffs for smooth, even application.",
+    "usage": "استخدميه حسب حاجتك وادمجيه بلطف للحصول على أفضل نتيجة."
+  },
+  {
+    "id": 32,
+    "name": "Ribbon Beauty Bow Set",
+    "category": "tools",
+    "price": 9,
+    "tagline": "Pretty satin bows for a cute finishing touch",
+    "image": "/imgs/products/ribbon-beauty-bow-set.png",
+    "description": "Pretty satin bows for a cute finishing touch.",
+    "usage": "استخدميه حسب حاجتك وادمجيه بلطف للحصول على أفضل نتيجة."
+  },
+  {
+    "id": 33,
+    "name": "Precision Makeup Brush Set",
+    "category": "tools",
+    "price": 20,
+    "tagline": "Soft detail brushes for face and eye makeup",
+    "image": "/imgs/products/precision-makeup-brush-set.png",
+    "description": "Soft detail brushes for face and eye makeup.",
+    "usage": "استخدميه حسب حاجتك وادمجيه بلطف للحصول على أفضل نتيجة."
+  },
+  {
+    "id": 34,
+    "name": "Quilted Beauty Pouch",
+    "category": "tools",
+    "price": 14,
+    "tagline": "A compact pouch for keeping your beauty tools together",
+    "image": "/imgs/products/quilted-beauty-pouch.png",
+    "description": "A compact pouch for keeping your beauty tools together.",
+    "usage": "استخدميه حسب حاجتك وادمجيه بلطف للحصول على أفضل نتيجة."
+  },
+  {
+    "id": 35,
+    "name": "Rose Gold Lash Curler",
+    "category": "tools",
+    "price": 11,
+    "tagline": "A gentle curler for a lifted lash look",
+    "image": "/imgs/products/rose-gold-lash-curler.png",
+    "description": "A gentle curler for a lifted lash look.",
+    "usage": "استخدميه حسب حاجتك وادمجيه بلطف للحصول على أفضل نتيجة."
+  },
+  {
+    "id": 36,
+    "name": "Scalp Massage Brush Set",
+    "category": "tools",
+    "price": 13,
+    "tagline": "Easy-grip brushes for a relaxing scalp massage",
+    "image": "/imgs/products/scalp-massage-brush-set.png",
+    "description": "Easy-grip brushes for a relaxing scalp massage.",
+    "usage": "استخدميه حسب حاجتك وادمجيه بلطف للحصول على أفضل نتيجة."
+  },
+  {
+    "id": 37,
+    "name": "Cloud Spa Headband Set",
+    "category": "tools",
+    "price": 10,
+    "tagline": "Soft headband essentials for your skincare routine",
+    "image": "/imgs/products/cloud-spa-headband-set.jpg",
+    "description": "Soft headband essentials for your skincare routine.",
+    "usage": "استخدميه حسب حاجتك وادمجيه بلطف للحصول على أفضل نتيجة."
+  },
+  {
+    "id": 38,
+    "name": "Dual Facial Cleansing Brushes",
+    "category": "tools",
+    "price": 15,
+    "tagline": "Two handy brushes for a fresh cleansing routine",
+    "image": "/imgs/products/dual-facial-cleansing-brushes.png",
+    "description": "Two handy brushes for a fresh cleansing routine.",
+    "usage": "استخدميه حسب حاجتك وادمجيه بلطف للحصول على أفضل نتيجة."
+  },
+  {
+    "id": 39,
+    "name": "Pink Teardrop Makeup Sponge",
+    "category": "tools",
+    "price": 8,
+    "tagline": "A soft teardrop sponge for seamless blending",
+    "image": "/imgs/products/pink-teardrop-makeup-sponge.jpg",
+    "description": "A soft teardrop sponge for seamless blending.",
+    "usage": "استخدميه حسب حاجتك وادمجيه بلطف للحصول على أفضل نتيجة."
+  }
+]

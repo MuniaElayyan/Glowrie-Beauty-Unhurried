@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Glowrie — Beauty, Unhurried</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="description" content="Glowrie is a fan-made concept store built to show off pretty makeup design work. Not a real shop." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Urbanist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              blush: { 50: '#FFF8F4', 100: '#FDEFE9', 200: '#F9DCE6', 300: '#F3C0D6', 400: '#EFA8C8', 500: '#E385B0', 600: '#C6407A', 700: '#9E3164' },
+              lilac: { 100: '#F1EAFB', 200: '#E2D4F6', 300: '#C9AEEC', 400: '#AD8ADD', 500: '#8F63C9' },
+              butter: { 100: '#FFF6DE', 200: '#FCE9AE', 300: '#FBDE87' },
+              plum: { 50: '#FBF5F8', 400: '#8A6E82', 600: '#5B4152', 900: '#341F30' },
+            },
+            fontFamily: {
+              display: ['Fraunces', 'serif'],
+              body: ['Urbanist', 'sans-serif'],
+            },
+            keyframes: {
+              floaty: { '0%,100%': { transform: 'translateY(0px)' }, '50%': { transform: 'translateY(-14px)' } },
+              driftSlow: { '0%,100%': { transform: 'translate(0,0) rotate(0deg)' }, '50%': { transform: 'translate(10px,-16px) rotate(4deg)' } },
+              riseIn: { '0%': { opacity: 0, transform: 'translateY(22px)' }, '100%': { opacity: 1, transform: 'translateY(0)' } },
+              wipeIn: { '0%': { transform: 'scaleX(0)' }, '100%': { transform: 'scaleX(1)' } },
+              pulseSoft: { '0%,100%': { transform: 'scale(1)', opacity: 1 }, '50%': { transform: 'scale(1.08)', opacity: 0.85 } },
+              kenBurns: { '0%': { transform: 'scale(1.06) translate(0,0)' }, '100%': { transform: 'scale(1.16) translate(-1%,-1%)' } },
+              shimmer: { '0%': { backgroundPosition: '-200% 0' }, '100%': { backgroundPosition: '200% 0' } },
+              tiltFloat: { '0%,100%': { transform: 'rotate(-1.5deg) translateY(0px)' }, '50%': { transform: 'rotate(1.5deg) translateY(-10px)' } },
+              popIn: { '0%': { opacity: 0, transform: 'scale(0.85)' }, '100%': { opacity: 1, transform: 'scale(1)' } },
+              marquee: { '0%': { transform: 'translateX(0)' }, '100%': { transform: 'translateX(-50%)' } },
+            },
+            animation: {
+              floaty: 'floaty 6s ease-in-out infinite',
+              driftSlow: 'driftSlow 9s ease-in-out infinite',
+              riseIn: 'riseIn 0.8s cubic-bezier(.22,1,.36,1) both',
+              wipeIn: 'wipeIn 1s cubic-bezier(.65,0,.35,1) both',
+              pulseSoft: 'pulseSoft 2.4s ease-in-out infinite',
+              kenBurns: 'kenBurns 14s ease-in-out infinite alternate',
+              shimmer: 'shimmer 2.6s linear infinite',
+              tiltFloat: 'tiltFloat 7s ease-in-out infinite',
+              popIn: 'popIn 0.6s cubic-bezier(.22,1,.36,1) both',
+              marquee: 'marquee 26s linear infinite',
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      html { scroll-behavior: smooth; }
+      body { background: #FFF8F4; overflow-x: hidden; }
+      ::selection { background: #F3C0D6; color: #341F30; }
+      @media (prefers-reduced-motion: reduce) {
+        * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+      }
+
+      /* خلفية الهيرو المتحركة (أعمدة المنتجات) */
+      @keyframes strip-scroll-up {
+        from { transform: translateY(0); }
+        to { transform: translateY(-50%); }
+      }
+      @keyframes strip-scroll-down {
+        from { transform: translateY(-50%); }
+        to { transform: translateY(0); }
+      }
+      .strip-track {
+        display: flex;
+        flex-direction: column;
+        height: 200%;
+        width: 100%;
+        will-change: transform;
+        animation-duration: 14s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
+      .strip-up { animation-name: strip-scroll-up; }
+      .strip-down { animation-name: strip-scroll-down; }
+      .strip-track img.strip-img {
+        display: block;
+        height: 50%;
+        width: 100%;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body class="bg-blush-50">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
