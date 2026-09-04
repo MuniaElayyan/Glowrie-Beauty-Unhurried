@@ -19,19 +19,19 @@ export function About() {
         <div className="pb-24">
             <section className="pt-12 pb-14 grid md:grid-cols-2 gap-10 items-center">
                 <Reveal>
-                    <p className="text-xs tracking-[0.2em] text-blush-600 font-medium mb-3">our story</p>
-                    <h1 className="font-display text-4xl sm:text-5xl text-plum-900 mb-6 leading-tight">
+                    <p className="text-xs tracking-[0.2em] text-blush-600 dark:text-sand-300 font-medium mb-3">our story</p>
+                    <h1 className="font-display text-4xl sm:text-5xl text-plum-900 dark:text-sand-100 mb-6 leading-tight">
                         We built Glowrie for the ten minutes before you leave the house.
                     </h1>
-                    <p className="text-plum-400 text-base sm:text-lg leading-relaxed">
+                    <p className="text-plum-400 dark:text-sand-400 text-base sm:text-lg leading-relaxed">
                         Not the two-hour routine. Not the fifteen-step one. Just the version where you
                         grab three things, they all work together, and you actually like what you see
                         in the mirror. That's the whole idea.
                     </p>
                 </Reveal>
                 <Reveal delay={120} className="relative h-72 sm:h-80">
-                    <div className="absolute -inset-4 bg-gradient-to-tr from-blush-300/30 via-lilac-300/25 to-butter-200/30 blur-2xl rounded-full" />
-                    <div className="relative w-full h-full rounded-[2rem] overflow-hidden ring-1 ring-white/60 shadow-[0_24px_50px_-18px_rgba(198,64,122,0.35)] animate-tiltFloat">
+                    <div className="absolute -inset-4 bg-gradient-to-tr from-blush-300/30 via-lilac-300/25 to-butter-200/30 dark:from-wine-700/30 dark:via-wine-600/20 dark:to-sand-300/20 blur-2xl rounded-full" />
+                    <div className="relative w-full h-full rounded-[2rem] overflow-hidden ring-1 ring-white/60 dark:ring-wine-700/60 shadow-[0_24px_50px_-18px_rgba(198,64,122,0.35)] animate-tiltFloat">
                         <img
                             src="/imgs/story/story-vanity-roses.jpg"
                             alt="Glowrie skincare and lip products styled with roses"
@@ -47,9 +47,9 @@ export function About() {
                     { title: "Small kit, no filler", body: "Thirty-nine products. Nothing here is on the shelf just to take up space." },
                     { title: "Made to actually wear", body: "Textures and finishes built for a full day, not just the first ten minutes." },
                 ].map((item, i) => (
-                    <Reveal key={i} delay={i * 100} className="rounded-2xl bg-white ring-1 ring-blush-200/70 p-6 hover:-translate-y-1 hover:shadow-[0_18px_38px_-18px_rgba(198,64,122,0.3)] transition-all duration-300">
-                        <div className="w-9 h-9 rounded-full bg-blush-100 flex items-center justify-center mb-4">
-                            <div className="w-3 h-3 rounded-full bg-blush-500 animate-pulseSoft" />
+                    <Reveal key={i} delay={i * 100} className="rounded-2xl bg-white dark:bg-sand-100 ring-1 ring-blush-200/70 dark:ring-wine-700/50 p-6 hover:-translate-y-1 hover:shadow-[0_18px_38px_-18px_rgba(198,64,122,0.3)] transition-all duration-300">
+                        <div className="w-9 h-9 rounded-full bg-blush-100 dark:bg-wine-700/20 flex items-center justify-center mb-4">
+                            <div className="w-3 h-3 rounded-full bg-blush-500 dark:bg-wine-600 animate-pulseSoft" />
                         </div>
                         <h3 className="font-display text-lg text-plum-900 mb-2">{item.title}</h3>
                         <p className="text-sm text-plum-400 leading-relaxed">{item.body}</p>
@@ -59,15 +59,15 @@ export function About() {
 
             <section className="rounded-3xl overflow-hidden mb-16 relative">
                 <Reveal className="grid md:grid-cols-2">
-                    <div className="p-8 sm:p-12 bg-gradient-to-br from-lilac-100 via-blush-100 to-butter-100 flex items-center">
+                    <div className="p-8 sm:p-12 bg-gradient-to-br from-lilac-100 via-blush-100 to-butter-100 dark:from-wine-800 dark:via-wine-700 dark:to-wine-800 flex items-center">
                         <div className="max-w-xl">
-                            <h2 className="font-display text-3xl text-plum-900 mb-4">How we pick colors</h2>
-                            <p className="text-plum-600 leading-relaxed mb-4">
+                            <h2 className="font-display text-3xl text-plum-900 dark:text-sand-100 mb-4">How we pick colors</h2>
+                            <p className="text-plum-600 dark:text-sand-200 leading-relaxed mb-4">
                                 Every shade starts as a swatch on paper before it goes anywhere near a product.
                                 We hold it up against skin in different light, live with it for a while, and only
                                 add it to the lineup once it earns a place next to everything else already there.
                             </p>
-                            <p className="text-plum-600 leading-relaxed">
+                            <p className="text-plum-600 dark:text-sand-200 leading-relaxed">
                                 It's a slower way to build a color range, but it's why nothing in the kit feels
                                 like a leftover.
                             </p>
@@ -86,18 +86,18 @@ export function About() {
             {/* Studio gallery — styled multi-product images in a moving strip */}
             <section className="pb-16 -mx-5 px-5 overflow-hidden">
                 <Reveal>
-                    <p className="text-xs tracking-[0.2em] text-blush-600 font-medium mb-6 text-center">
+                    <p className="text-xs tracking-[0.2em] text-blush-600 dark:text-sand-300 font-medium mb-6 text-center">
                         from the studio
                     </p>
                 </Reveal>
                 <div className="relative">
-                    <div className="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-blush-50 to-transparent z-10" />
-                    <div className="absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-blush-50 to-transparent z-10" />
+                    <div className="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-blush-50 dark:from-wine-950 to-transparent z-10" />
+                    <div className="absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-blush-50 dark:from-wine-950 to-transparent z-10" />
                     <div className="flex w-max animate-marquee hover:[animation-play-state:paused]">
                         {[...STUDIO_STRIP, ...STUDIO_STRIP].map((img, i) => (
                             <div
                                 key={`${img.src}-${i}`}
-                                className="w-56 h-64 sm:w-72 sm:h-80 mx-2.5 rounded-2xl overflow-hidden ring-1 ring-blush-200/70 shrink-0 shadow-sm"
+                                className="w-56 h-64 sm:w-72 sm:h-80 mx-2.5 rounded-2xl overflow-hidden ring-1 ring-blush-200/70 dark:ring-wine-700/60 shrink-0 shadow-sm"
                             >
                                 <img
                                     src={img.src}
@@ -112,7 +112,7 @@ export function About() {
             </section>
 
             <Reveal as="section" className="max-w-2xl">
-                <p className="text-sm text-plum-400 leading-relaxed border-t border-blush-200 pt-6">
+                <p className="text-sm text-plum-400 dark:text-sand-400 leading-relaxed border-t border-blush-200 dark:border-sand-500/40 pt-6">
                     A small note: Glowrie is a concept project, put together just for fun to practice
                     building a pretty, feel-good storefront — right down to a working checkout. It isn't
                     an official brand site, so think of it as a design exercise inspired by the kind of
