@@ -50,16 +50,16 @@ export function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
 
     return (
         <div className="fixed inset-0 z-[60] flex items-center justify-center p-4">
-            <div className="absolute inset-0 bg-plum-900/50 backdrop-blur-sm" onClick={handleClose} />
+            <div className="absolute inset-0 bg-plum-900/50 dark:bg-wine-950/70 backdrop-blur-sm" onClick={handleClose} />
 
-            <div className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto bg-blush-50 rounded-3xl shadow-2xl animate-popIn ring-1 ring-blush-200/70">
+            <div className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto bg-blush-50 dark:bg-wine-900 rounded-3xl shadow-2xl animate-popIn ring-1 ring-blush-200/70 dark:ring-wine-700/70">
                 {step === "form" ? (
                     <>
-                        <div className="sticky top-0 bg-blush-50/95 backdrop-blur-sm flex items-center justify-between px-6 py-5 border-b border-blush-200 z-10">
-                            <h3 className="font-display italic text-2xl text-plum-900">Complete your order</h3>
+                        <div className="sticky top-0 bg-blush-50/95 dark:bg-wine-900/95 backdrop-blur-sm flex items-center justify-between px-6 py-5 border-b border-blush-200 dark:border-wine-700 z-10">
+                            <h3 className="font-display italic text-2xl text-plum-900 dark:text-sand-100">Complete your order</h3>
                             <button
                                 onClick={handleClose}
-                                className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-blush-100 text-plum-600 text-xl leading-none transition-colors"
+                                className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-blush-100 text-plum-600 text-xl leading-none transition-colors dark:text-sand-300 dark:hover:bg-wine-800 dark:hover:text-sand-100"
                                 aria-label="Close checkout"
                             >
                                 &times;
@@ -68,13 +68,13 @@ export function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
 
                         <form onSubmit={handleSubmit} className="px-6 py-6">
                             <div className="mb-6">
-                                <p className="text-xs tracking-[0.15em] uppercase text-blush-600 font-medium mb-3">
+                                <p className="text-xs tracking-[0.15em] uppercase text-blush-600 dark:text-sand-300 font-medium mb-3">
                                     Order summary
                                 </p>
-                                <div className="rounded-2xl bg-white ring-1 ring-blush-200/70 p-4 flex flex-col gap-3 mb-2">
+                                <div className="rounded-2xl bg-white dark:bg-sand-100 ring-1 ring-blush-200/70 dark:ring-wine-700/40 p-4 flex flex-col gap-3 mb-2">
                                     {detailedItems.map(item => (
                                         <div key={item.id} className="flex items-center gap-3">
-                                            <div className="w-12 h-12 shrink-0 rounded-lg overflow-hidden bg-[#FDEFE9]">
+                                            <div className="w-12 h-12 shrink-0 rounded-lg overflow-hidden bg-[#FDEFE9] dark:bg-sand-200">
                                                 <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
                                             </div>
                                             <div className="mr-auto text-sm text-plum-900">
@@ -87,13 +87,13 @@ export function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
                                     ))}
                                 </div>
                                 <div className="flex justify-between items-baseline px-1">
-                                    <span className="text-sm text-plum-400">Total</span>
-                                    <span className="font-display text-xl text-plum-900">{formatCurrency(total)}</span>
+                                    <span className="text-sm text-plum-400 dark:text-sand-400">Total</span>
+                                    <span className="font-display text-xl text-plum-900 dark:text-sand-100">{formatCurrency(total)}</span>
                                 </div>
                             </div>
 
                             <div className="mb-5">
-                                <label className="block text-xs tracking-[0.15em] uppercase text-blush-600 font-medium mb-2">
+                                <label className="block text-xs tracking-[0.15em] uppercase text-blush-600 dark:text-sand-300 font-medium mb-2">
                                     Full name
                                 </label>
                                 <input
@@ -101,12 +101,12 @@ export function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
                                     value={name}
                                     onChange={e => setName(e.target.value)}
                                     placeholder="Your name"
-                                    className="w-full rounded-xl px-4 py-3 bg-white ring-1 ring-blush-200/70 focus:ring-blush-400 outline-none text-sm text-plum-900 placeholder:text-plum-400/70 transition-shadow"
+                                    className="w-full rounded-xl px-4 py-3 bg-white dark:bg-sand-100 ring-1 ring-blush-200/70 dark:ring-wine-700/40 focus:ring-blush-400 dark:focus:ring-wine-500 outline-none text-sm text-plum-900 placeholder:text-plum-400/70 transition-shadow"
                                 />
                             </div>
 
                             <div className="mb-5">
-                                <label className="block text-xs tracking-[0.15em] uppercase text-blush-600 font-medium mb-2">
+                                <label className="block text-xs tracking-[0.15em] uppercase text-blush-600 dark:text-sand-300 font-medium mb-2">
                                     Phone number
                                 </label>
                                 <input
@@ -115,12 +115,12 @@ export function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
                                     value={phone}
                                     onChange={e => setPhone(e.target.value)}
                                     placeholder="e.g. 07xx xxx xxx"
-                                    className="w-full rounded-xl px-4 py-3 bg-white ring-1 ring-blush-200/70 focus:ring-blush-400 outline-none text-sm text-plum-900 placeholder:text-plum-400/70 transition-shadow"
+                                    className="w-full rounded-xl px-4 py-3 bg-white dark:bg-sand-100 ring-1 ring-blush-200/70 dark:ring-wine-700/40 focus:ring-blush-400 dark:focus:ring-wine-500 outline-none text-sm text-plum-900 placeholder:text-plum-400/70 transition-shadow"
                                 />
                             </div>
 
                             <div className="mb-5">
-                                <label className="block text-xs tracking-[0.15em] uppercase text-blush-600 font-medium mb-2">
+                                <label className="block text-xs tracking-[0.15em] uppercase text-blush-600 dark:text-sand-300 font-medium mb-2">
                                     City / Area
                                 </label>
                                 <input
@@ -128,12 +128,12 @@ export function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
                                     value={city}
                                     onChange={e => setCity(e.target.value)}
                                     placeholder="Your city or area"
-                                    className="w-full rounded-xl px-4 py-3 bg-white ring-1 ring-blush-200/70 focus:ring-blush-400 outline-none text-sm text-plum-900 placeholder:text-plum-400/70 transition-shadow"
+                                    className="w-full rounded-xl px-4 py-3 bg-white dark:bg-sand-100 ring-1 ring-blush-200/70 dark:ring-wine-700/40 focus:ring-blush-400 dark:focus:ring-wine-500 outline-none text-sm text-plum-900 placeholder:text-plum-400/70 transition-shadow"
                                 />
                             </div>
 
                             <div className="mb-5">
-                                <label className="block text-xs tracking-[0.15em] uppercase text-blush-600 font-medium mb-2">
+                                <label className="block text-xs tracking-[0.15em] uppercase text-blush-600 dark:text-sand-300 font-medium mb-2">
                                     Home address / nearby landmark
                                 </label>
                                 <textarea
@@ -142,12 +142,12 @@ export function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
                                     onChange={e => setAddress(e.target.value)}
                                     placeholder="Street, building, floor, or a nearby landmark to help the courier find you"
                                     rows={3}
-                                    className="w-full rounded-xl px-4 py-3 bg-white ring-1 ring-blush-200/70 focus:ring-blush-400 outline-none text-sm text-plum-900 placeholder:text-plum-400/70 resize-none transition-shadow"
+                                    className="w-full rounded-xl px-4 py-3 bg-white dark:bg-sand-100 ring-1 ring-blush-200/70 dark:ring-wine-700/40 focus:ring-blush-400 dark:focus:ring-wine-500 outline-none text-sm text-plum-900 placeholder:text-plum-400/70 resize-none transition-shadow"
                                 />
                             </div>
 
                             <div className="mb-6">
-                                <label className="block text-xs tracking-[0.15em] uppercase text-blush-600 font-medium mb-2">
+                                <label className="block text-xs tracking-[0.15em] uppercase text-blush-600 dark:text-sand-300 font-medium mb-2">
                                     Delivery notes <span className="normal-case text-plum-400">(optional)</span>
                                 </label>
                                 <textarea
@@ -155,11 +155,11 @@ export function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
                                     onChange={e => setNotes(e.target.value)}
                                     placeholder="Best time to deliver, gift wrap, anything else?"
                                     rows={2}
-                                    className="w-full rounded-xl px-4 py-3 bg-white ring-1 ring-blush-200/70 focus:ring-blush-400 outline-none text-sm text-plum-900 placeholder:text-plum-400/70 resize-none transition-shadow"
+                                    className="w-full rounded-xl px-4 py-3 bg-white dark:bg-sand-100 ring-1 ring-blush-200/70 dark:ring-wine-700/40 focus:ring-blush-400 dark:focus:ring-wine-500 outline-none text-sm text-plum-900 placeholder:text-plum-400/70 resize-none transition-shadow"
                                 />
                             </div>
 
-                            <div className="flex items-center gap-3 mb-6 rounded-2xl bg-butter-100 ring-1 ring-butter-200 px-4 py-3">
+                            <div className="flex items-center gap-3 mb-6 rounded-2xl bg-butter-100 ring-1 ring-butter-200 dark:bg-sand-200 dark:ring-sand-300 px-4 py-3">
                                 <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center shrink-0">
                                     <svg viewBox="0 0 24 24" className="w-4 h-4 fill-blush-600">
                                         <path d="M20 6H4c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 10H4v-6h16v6zm0-8H4V8h16v.01z" />
@@ -173,7 +173,7 @@ export function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
 
                             <button
                                 type="submit"
-                                className="w-full py-3.5 rounded-full bg-plum-900 text-white text-sm font-medium tracking-wide hover:bg-blush-600 transition-colors duration-300"
+                                className="w-full py-3.5 rounded-full bg-plum-900 text-white text-sm font-medium tracking-wide hover:bg-blush-600 transition-colors duration-300 dark:bg-sand-200 dark:text-wine-900 dark:hover:bg-sand-100"
                             >
                                 Place order — {formatCurrency(total)}
                             </button>
@@ -181,19 +181,19 @@ export function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
                     </>
                 ) : (
                     <div className="px-8 py-14 text-center">
-                        <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-blush-100 flex items-center justify-center animate-popIn">
-                            <svg viewBox="0 0 24 24" className="w-7 h-7 fill-blush-600">
+                        <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-blush-100 dark:bg-sand-200 flex items-center justify-center animate-popIn">
+                            <svg viewBox="0 0 24 24" className="w-7 h-7 fill-blush-600 dark:fill-wine-700">
                                 <path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z" />
                             </svg>
                         </div>
-                        <h3 className="font-display italic text-2xl text-plum-900 mb-3">Order placed!</h3>
-                        <p className="text-sm text-plum-400 max-w-xs mx-auto leading-relaxed mb-8">
+                        <h3 className="font-display italic text-2xl text-plum-900 dark:text-sand-100 mb-3">Order placed!</h3>
+                        <p className="text-sm text-plum-400 dark:text-sand-400 max-w-xs mx-auto leading-relaxed mb-8">
                             Thank you, {name.split(" ")[0] || "friend"}. We'll give you a quick call at {phone} to
                             confirm before it heads your way — pay in cash when it arrives.
                         </p>
                         <button
                             onClick={handleClose}
-                            className="px-8 py-3 rounded-full bg-plum-900 text-white text-sm font-medium tracking-wide hover:bg-blush-600 transition-colors duration-300"
+                            className="px-8 py-3 rounded-full bg-plum-900 text-white text-sm font-medium tracking-wide hover:bg-blush-600 transition-colors duration-300 dark:bg-sand-200 dark:text-wine-900 dark:hover:bg-sand-100"
                         >
                             Done
                         </button>
