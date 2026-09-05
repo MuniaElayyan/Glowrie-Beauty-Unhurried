@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom"
 import { Home } from "./pages/Home"
 import { Store } from "./pages/Store"
 import { About } from "./pages/About"
+import { Looks } from "./pages/Looks"
 import { Navbar } from "./components/Navbar"
 import { Footer } from "./components/Footer"
 import { ShoppingCartProvider } from "./context/ShoppingCartContext"
@@ -17,6 +18,7 @@ function App() {
                         <Routes>
                             <Route path="/" element={<Home />} />
                             <Route path="/store" element={<Store />} />
+                            <Route path="/looks" element={<Looks />} />
                             <Route path="/about" element={<About />} />
                         </Routes>
                     </div>
