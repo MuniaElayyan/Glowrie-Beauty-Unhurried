@@ -388,5 +388,105 @@
     "image": "/imgs/products/pink-teardrop-makeup-sponge.jpg",
     "description": "A soft teardrop sponge for seamless blending.",
     "usage": "استخدميه حسب حاجتك وادمجيه بلطف للحصول على أفضل نتيجة."
+  },
+  {
+    "id": 40,
+    "name": "Rose Veil Foundation",
+    "category": "face",
+    "price": 29,
+    "tagline": "Buildable coverage with a fresh satin finish",
+    "image": "/imgs/looks/products/foundation-rose.svg",
+    "description": "Buildable coverage with a fresh satin finish.",
+    "usage": "Apply a small amount and blend gently for an even finish."
+  },
+  {
+    "id": 41,
+    "name": "Petal Silk Foundation",
+    "category": "face",
+    "price": 28,
+    "tagline": "Lightweight coverage with a soft skin-like finish",
+    "image": "/imgs/looks/products/foundation-petal.svg",
+    "description": "Lightweight coverage with a soft skin-like finish.",
+    "usage": "Apply a small amount and blend gently for an even finish."
+  },
+  {
+    "id": 42,
+    "name": "Honey Satin Foundation",
+    "category": "face",
+    "price": 30,
+    "tagline": "Warm golden coverage with a smooth satin glow",
+    "image": "/imgs/looks/products/foundation-honey.svg",
+    "description": "Warm golden coverage with a smooth satin glow.",
+    "usage": "Apply a small amount and blend gently for an even finish."
+  },
+  {
+    "id": 43,
+    "name": "Cocoa Velvet Foundation",
+    "category": "face",
+    "price": 31,
+    "tagline": "Rich coverage with a refined velvet finish",
+    "image": "/imgs/looks/products/foundation-cocoa.svg",
+    "description": "Rich coverage with a refined velvet finish.",
+    "usage": "Apply a small amount and blend gently for an even finish."
+  },
+  {
+    "id": 44,
+    "name": "Soft Sand Foundation",
+    "category": "face",
+    "price": 27,
+    "tagline": "Natural-looking coverage for an effortless base",
+    "image": "/imgs/looks/products/foundation-sand.svg",
+    "description": "Natural-looking coverage for an effortless base.",
+    "usage": "Apply a small amount and blend gently for an even finish."
+  },
+  {
+    "id": 45,
+    "name": "Rose Whisper Blush",
+    "category": "face",
+    "price": 16,
+    "tagline": "A soft rose flush for polished cheeks",
+    "image": "/imgs/looks/products/blush-rose.svg",
+    "description": "A soft rose flush for polished cheeks.",
+    "usage": "Apply a small amount and blend gently for an even finish."
+  },
+  {
+    "id": 46,
+    "name": "Petal Peach Blush",
+    "category": "face",
+    "price": 16,
+    "tagline": "A fresh peach tone for a warm everyday flush",
+    "image": "/imgs/looks/products/blush-peach.svg",
+    "description": "A fresh peach tone for a warm everyday flush.",
+    "usage": "Apply a small amount and blend gently for an even finish."
+  },
+  {
+    "id": 47,
+    "name": "Caramel Bloom Blush",
+    "category": "face",
+    "price": 17,
+    "tagline": "A warm caramel-rose blush for golden looks",
+    "image": "/imgs/looks/products/blush-caramel.svg",
+    "description": "A warm caramel-rose blush for golden looks.",
+    "usage": "Apply a small amount and blend gently for an even finish."
+  },
+  {
+    "id": 48,
+    "name": "Berry Silk Blush",
+    "category": "face",
+    "price": 18,
+    "tagline": "A rich berry flush that melts into the skin",
+    "image": "/imgs/looks/products/blush-berry.svg",
+    "description": "A rich berry flush that melts into the skin.",
+    "usage": "Apply a small amount and blend gently for an even finish."
+  },
+  {
+    "id": 49,
+    "name": "Nude Petal Blush",
+    "category": "face",
+    "price": 15,
+    "tagline": "A muted nude-pink wash for soft definition",
+    "image": "/imgs/looks/products/blush-nude.svg",
+    "description": "A muted nude-pink wash for soft definition.",
+    "usage": "Apply a small amount and blend gently for an even finish."
   }
 ]
