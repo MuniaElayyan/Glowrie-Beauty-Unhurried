@@ -6,6 +6,7 @@ import { useTheme } from "../context/ThemeContext"
 const NAV_LINKS = [
     { to: "/", label: "Home", end: true },
     { to: "/store", label: "Product", end: false },
+    { to: "/looks", label: "Looks", end: false },
     { to: "/about", label: "Story", end: false },
 ]
 
