@@ -164,6 +164,22 @@ export function Home() {
                 </Reveal>
             </section>
 
+            {/* Lookbook */}
+            <section className="pb-20">
+                <Reveal className="rounded-3xl overflow-hidden bg-gradient-to-br from-lilac-100 via-blush-100 to-butter-100 dark:from-wine-800 dark:via-wine-700 dark:to-wine-800 ring-1 ring-blush-200/70 dark:ring-wine-700/60 p-7 sm:p-10">
+                    <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
+                        <div className="max-w-xl">
+                            <p className="text-xs tracking-[0.2em] text-blush-600 dark:text-sand-300 font-medium mb-3 uppercase">the lookbook</p>
+                            <h2 className="font-display text-3xl sm:text-4xl text-plum-900 dark:text-sand-100 mb-3">Five faces, five moods.</h2>
+                            <p className="text-sm text-plum-500 dark:text-sand-300 leading-relaxed">Every look now comes with its own complete edit — no copy-paste routines, no one-primer-fits-all energy.</p>
+                        </div>
+                        <Link to="/looks" className="shrink-0 px-6 py-3 rounded-full bg-plum-900 text-white text-sm font-medium hover:bg-blush-600 dark:bg-sand-200 dark:text-wine-900 transition-colors">
+                            Explore the looks →
+                        </Link>
+                    </div>
+                </Reveal>
+            </section>
+
             {/* Featured products */}
             <section className="pb-20">
                 <Reveal className="flex items-end justify-between mb-6">
