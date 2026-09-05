@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="520" viewBox="0 0 520 520">
+      <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#D8A08C"/><stop offset="1" stop-color="#B96D5D"/></linearGradient><filter id="s"><feDropShadow dx="0" dy="14" stdDeviation="16" flood-opacity=".18"/></filter></defs>
+      <rect width="520" height="520" rx="54" fill="#FDEFE9"/>
+      <ellipse cx="260" cy="438" rx="125" ry="20" fill="#6B4050" opacity=".12"/>
+      <g filter="url(#s)"><rect x="184" y="150" width="152" height="245" rx="30" fill="url(#g)"/><rect x="202" y="110" width="116" height="58" rx="16" fill="#EAD7C7"/><rect x="218" y="76" width="84" height="42" rx="12" fill="#7A5261"/><rect x="206" y="245" width="112" height="72" rx="18" fill="#FFF9F5" opacity=".92"/></g>
+      <text x="262" y="274" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#4A2B3A">GLOWRIE</text>
+      <text x="262" y="298" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6B4050">FOUNDATION · 01</text>
+      <text x="260" y="470" text-anchor="middle" font-family="Georgia, serif" font-size="15" fill="#6B4050">Rose Veil Foundation</text>
+    </svg>
