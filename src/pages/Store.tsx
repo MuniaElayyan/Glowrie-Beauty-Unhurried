@@ -14,9 +14,14 @@ const CATEGORIES = [
 export function Store() {
     const [active, setActive] = useState("all")
 
+    const shopItems = useMemo(
+        () => storeItems.filter(item => item.id < 40),
+        []
+    )
+
     const filtered = useMemo(
-        () => (active === "all" ? storeItems : storeItems.filter(item => item.category === active)),
-        [active]
+        () => (active === "all" ? shopItems : shopItems.filter(item => item.category === active)),
+        [active, shopItems]
     )
 
     return (
